@@ -1,6 +1,6 @@
 {
-    "name": "Stepper",
-    "version": "0.0.1",
+    "name": "Stepper Library",
+    "version": "0.0.2",
     "author": "Brett Walach, Kenneth Lim",
     "license": "GPLv3",
     "description": "Arduino Stepper library ported to Spark platform"
