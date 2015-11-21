@@ -58,8 +58,11 @@ Stepper::Stepper(int number_of_steps, int motor_pin_1, int motor_pin_2)
   this->speed = 0;        // the motor speed, in revolutions per minute
   this->direction = 0;      // motor direction
   this->last_step_time = 0;    // time stamp in ms of the last step taken
-  this->number_of_steps = number_of_steps;    // total number of steps for this motor
-
+  if (number_of_steps)
+    this->number_of_steps = number_of_steps;    // total number of steps for this motor
+  else
+    this->number_of_steps = 1;
+    
   // Arduino pins for the motor control connection:
   this->motor_pin_1 = motor_pin_1;
   this->motor_pin_2 = motor_pin_2;
@@ -88,7 +91,10 @@ Stepper::Stepper(int number_of_steps, int motor_pin_1, int motor_pin_2, int moto
   this->speed = 0;        // the motor speed, in revolutions per minute
   this->direction = 0;      // motor direction
   this->last_step_time = 0;    // time stamp in ms of the last step taken
-  this->number_of_steps = number_of_steps;    // total number of steps for this motor
+  if (number_of_steps)
+    this->number_of_steps = number_of_steps;    // total number of steps for this motor
+  else
+    this->number_of_steps = 1;
 
   // Arduino pins for the motor control connection:
   this->motor_pin_1 = motor_pin_1;
@@ -112,6 +118,9 @@ Stepper::Stepper(int number_of_steps, int motor_pin_1, int motor_pin_2, int moto
 */
 void Stepper::setSpeed(long whatSpeed)
 {
+  if (whatSpeed == 0)
+    whatSpeed = 1;
+    
   this->step_delay = 60L * 1000L / this->number_of_steps / whatSpeed;
 }
 
