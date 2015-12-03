@@ -57,7 +57,10 @@ class Stepper {
 
     // mover method:
     void step(int number_of_steps);
-
+    
+    // stop method:
+    void stop(void);
+    
     int version(void);
 
   private:

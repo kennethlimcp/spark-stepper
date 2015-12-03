@@ -221,6 +221,23 @@ void Stepper::stepMotor(int thisStep)
 }
 
 /*
+  Stops the motor and releases it so it's not held in position by a step (good for usage when the motor is stopped for long periods of time)
+ */
+void Stepper::stop(void)
+{
+  if (this->pin_count == 2) {
+    digitalWrite(motor_pin_1, LOW);
+    digitalWrite(motor_pin_2, LOW);
+  }
+  else if (this->pin_count == 4) {
+    digitalWrite(motor_pin_1, LOW);
+    digitalWrite(motor_pin_2, LOW);
+    digitalWrite(motor_pin_3, LOW);
+    digitalWrite(motor_pin_4, LOW);
+  }
+}
+
+/*
   version() returns the version of the library:
 */
 int Stepper::version(void)
