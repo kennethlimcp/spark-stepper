@@ -138,7 +138,7 @@ void Stepper::step(int steps_to_move)
 
 
   // decrement the number of steps, moving one step each time:
-  while(steps_left > 0) {
+  while(steps_left != 0) {
   // move only if the appropriate delay has passed:
   if (millis() - this->last_step_time >= this->step_delay) {
       // get the timeStamp of when you stepped:
