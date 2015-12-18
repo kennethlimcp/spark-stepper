@@ -188,7 +188,7 @@ void Stepper::setSpeed(long whatSpeed)
   if (whatSpeed == 0)
     whatSpeed = 1;
 
-  this->step_delay = 60L * 1000L / this->number_of_steps / whatSpeed;
+  this->step_delay = 60L * 1000L * 1000L / this->number_of_steps / whatSpeed;
 }
 
 /*
