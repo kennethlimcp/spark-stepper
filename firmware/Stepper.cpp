@@ -91,7 +91,7 @@ Stepper::Stepper(int number_of_steps, int motor_pin_1, int motor_pin_2)
 {
   this->step_number = 0;      // which step the motor is on
   this->direction = 0;      // motor direction
-  this->last_step_time = 0;    // time stamp in ms of the last step taken
+  this->last_step_time = 0;    // time stamp in us of the last step taken
   if (number_of_steps)
     this->number_of_steps = number_of_steps;    // total number of steps for this motor
   else
@@ -108,7 +108,7 @@ Stepper::Stepper(int number_of_steps, int motor_pin_1, int motor_pin_2)
 	// When there are only 2 pins, set the others to 0:
   this->motor_pin_3 = 0;
   this->motor_pin_4 = 0;
-	this->motor_pin_5 = 0;
+		this->motor_pin_5 = 0;
 
   // pin_count is used by the stepMotor() method:
   this->pin_count = 2;
@@ -124,7 +124,7 @@ Stepper::Stepper(int number_of_steps, int motor_pin_1, int motor_pin_2,
 {
   this->step_number = 0;      // which step the motor is on
   this->direction = 0;      // motor direction
-  this->last_step_time = 0;    // time stamp in ms of the last step taken
+  this->last_step_time = 0;    // time stamp in us of the last step taken
   if (number_of_steps)
     this->number_of_steps = number_of_steps;    // total number of steps for this motor
   else

@@ -1,6 +1,6 @@
 {
     "name": "Stepper",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "author": "Brett Walach, Kenneth Lim, ScruffR, richardwillars",
     "license": "GPLv3",
     "description": "Arduino Stepper library ported to Particle platform"
